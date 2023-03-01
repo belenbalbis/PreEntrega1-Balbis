@@ -1,0 +1,17 @@
+.cartButton {
+    padding-left: 25px;
+    padding-top: 3px;
+
+}
+
+.item {
+    font-size: 25px;
+}
+
+.number {
+    border-style: none;
+    border-radius: 30px;
+    background-color: white;
+    
+}
+
