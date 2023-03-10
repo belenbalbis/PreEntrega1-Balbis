@@ -1,16 +1,46 @@
 import './App.css'
-import Navbar from './components/Navbar'
-import List from './components/List/List'
-import CartWidget from './components/CartWidget/CartWidget'
+import Navbar from './components/Navbar/Navbar'
+import axios from "axios"
+import { useEffect, useState } from 'react'
+import ItemListContainer from './components/ItemListContainer'
+import { Route, Routes } from 'react-router-dom'
+import Home from './components/Home'
+import ItemDetailContainer from './components/ItemDetailContainer'
 
-const sale = ["15% OFF", "50% OFF", "80% OFF"]
 
 const App = ()  => {
+
+    const [productos, setProductos] = useState([])
+
+    const getProductos = async () => {
+    const res = await axios.get ("https://fakestoreapi.com/products")
+    setProductos(res.data);
+  }
+
+useEffect(() => {
+getProductos();
+}, []);
+
+
+
+
 return (
     <div>
       <Navbar />
-      <List sale={sale} />
+      <h1>Tienda</h1>
+      <Routes>
+        <Route path= "/" element= {<Home/>} />
+      </Routes>
+      <Routes>
+        <Route path= "/category/:id" element= {<ItemListContainer productos={productos}/>} />
+      </Routes>
+      <Routes>
+        <Route path= "/item/:id" element= {<ItemDetailContainer productos={productos}/>} />
+      </Routes>
+
     </div>
+
+
   )
 }
 
