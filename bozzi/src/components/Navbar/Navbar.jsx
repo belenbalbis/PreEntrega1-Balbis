@@ -9,12 +9,12 @@ const Navbar = () => {
       <Link to= "/">
       <p className= "navitem">Home</p>
       </Link>
-      <Link to= "/category/:id">
+      <Link to= "/category">
       <p className= "navitem">Productos</p>
       </Link>
-      <Link to= "/item/:id">
+      {/* <Link to= "/item/:id">
       <p classname= "navitem" >Detalles productos</p>
-      </Link>
+      </Link> */}
         <CartWidget />
     </nav>
   )

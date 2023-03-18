@@ -1,8 +1,10 @@
+import Card from "../Card"
+
 const ItemListContainer = ({productos}) => {
   return (
     <div>
       {productos.map((producto) => (
-        <h4 key={producto.id}>{producto.title}</h4>
+        <Card key={producto.id} producto= {producto} />
       ))}
     </div>
   )

@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer'
 import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import ItemDetailContainer from './components/ItemDetailContainer'
+import ProductItem from './components/ProductItem'
 
 
 const App = ()  => {
@@ -32,12 +33,15 @@ return (
         <Route path= "/" element= {<Home/>} />
       </Routes>
       <Routes>
-        <Route path= "/category/:id" element= {<ItemListContainer productos={productos}/>} />
+        <Route path= "/category" element= {<ItemListContainer productos={productos}/>} />
       </Routes>
-      <Routes>
+      {/* <Routes>
         <Route path= "/item/:id" element= {<ItemDetailContainer productos={productos}/>} />
+      </Routes> */}
+      <Routes>
+        <Route path= "/category/:id" element= {<ProductItem productos={productos} />}
+        />
       </Routes>
-
     </div>
 
 

@@ -1,4 +1,4 @@
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({productos}) => {
 return (
     <div>
     {productos.map((producto) => (
